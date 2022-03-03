@@ -10,62 +10,36 @@ import {
     TouchableOpacity,
     Dimensions,
 } from 'react-native';
-import OnBoarding_1 from '../../assets/svg/Onborading/OnBoarding_1'
-
-const { width, height } = Dimensions.get('window');
+import OnBoarding_1 from '../../assets/svg/Onborading/OnBoarding_1.svg'
+import ItemView from './ItemView';
+import LastItem from './LastItem';
+const { width, height } = Dimensions.get('screen');
 
 const COLORS = { primary: '#383838', white: '#fff' };
 
 const slides = [
     {
         id: '1',
-        image: require('../../assets/images/OnBoarding/OnBoarding_1.png'),
         title: 'Best Digital SolutioHire IT Professionals at very affordable prices.',
         subtitle: 'Make the most of HirePro’s 150+ Seasoned IT Professionals to Boost Your Online Presence. HirePro has experts who usher ease of mind for you..',
     },
     {
         id: '2',
-        image: require('../../assets/images/OnBoarding/OnBoarding_2.png'),
         title: 'Quick, Easy, and Seamless!',
         subtitle: 'We showcase to you the best talent pool. You choose the best resources according to your needs & budget, that’s all about it. That’s all it takes to hire certified professionalswith HirePro.',
     },
     {
         id: '3',
-        image: require('../../assets/images/OnBoarding/OnBoarding_3.png'),
         title: 'Why to choose HirePro ',
         subtitle: 'Years of industry exposure have helped HirePro set up a diverse service pool, covering all areas essential for any business to thrive in the virtual world. Our resource pool comprises the best professionals with solid track record. We select them through a lengthy & strict vetting process, So you get the best services for the best rates.',
     },
     {
         id: '4',
-        image: require('../../assets/images/OnBoarding/OnBoarding_3.png'),
         title: 'Increase Your Value',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
 ];
 
-const Slide = ({ item }) => {
-    return (
-
-        <View style={{ alignItems: 'center', top: 120 }}>
-            {/* <TouchableOpacity style={styles.skip_Container}>
-                <Text style={{ color: '#FFFFFF', fontSize: 16 }}>SKIP</Text>
-            </TouchableOpacity> */}
-            {item.id != 4 ? (<View style={{ alignItems: 'center' }}>
-                <View style={{ width: 320, alignItems: 'center', bottom: 10 }}>
-                    <Text style={styles.title}>{item?.title}</Text>
-                    <Text style={styles.subtitle}>{item?.subtitle}</Text>
-                </View>
-                <Image
-                    source={item?.image}
-                    style={{ height: '65%', width, resizeMode: 'contain' }}
-                />
-
-            </View>) :
-                (<Text style={{ width: 300, height: 4000 }}>2</Text>)}
-
-        </View>
-    );
-};
 
 const OnBoarding = ({ navigation }) => {
     const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
@@ -76,13 +50,22 @@ const OnBoarding = ({ navigation }) => {
         setCurrentSlideIndex(currentIndex);
     };
 
-    const goToNextSlide = () => {
-        const nextSlideIndex = currentSlideIndex + 1;
-        if (nextSlideIndex != slides.length) {
-            const offset = nextSlideIndex * width;
-            ref?.current.scrollToOffset({ offset });
-            setCurrentSlideIndex(currentSlideIndex + 1);
-        }
+
+    const Slide = ({ item }) => {
+        return (
+
+            <View>
+
+                {item.id != 4 ? (
+                    <ItemView slider={item} onSkip={skip} />
+                ) :
+                    (
+                        <LastItem slider={item} goHome={() => navigation.replace('AppStack')} />
+
+                    )}
+
+            </View>
+        );
     };
 
     const skip = () => {
@@ -102,56 +85,7 @@ const OnBoarding = ({ navigation }) => {
                 }}>
                 {/* Render buttons */}
                 <View style={{ marginBottom: 20 }}>
-                    {currentSlideIndex == slides.length - 1 ? (
-                        <View style={{ height: 50 }}>
-                            <TouchableOpacity
-                                style={styles.btn}
-                                onPress={() => navigation.replace('AppStack')}>
-                                <Text style={{ fontWeight: 'bold', fontSize: 15, color: '#ECF1F4' }}>
-                                    GET STARTED
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                    ) : (
-                        // <View style={{ flexDirection: 'row' }}>
-                        //     <TouchableOpacity
-                        //         activeOpacity={0.8}
-                        //         style={[
-                        //             styles.btn,
-                        //             {
-                        //                 borderColor: COLORS.white,
-                        //                 borderWidth: 1,
-                        //                 backgroundColor: 'transparent',
-                        //             },
-                        //         ]}
-                        //         onPress={skip}>
-                        //         <Text
-                        //             style={{
-                        //                 fontWeight: 'bold',
-                        //                 fontSize: 15,
-                        //                 color: COLORS.white,
-                        //             }}>
-                        //             SKIP
-                        //         </Text>
-                        //     </TouchableOpacity>
-                        //     <View style={{ width: 15 }} />
-                        //     <TouchableOpacity
-                        //         activeOpacity={0.8}
-                        //         onPress={goToNextSlide}
-                        //         style={styles.btn}>
-                        //         <Text
-                        //             style={{
-                        //                 fontWeight: 'bold',
-                        //                 fontSize: 15,
-                        //                 color: '#ECF1F4'
-                        //             }}>
-                        //             NEXT
-                        //         </Text>
-                        //     </TouchableOpacity>
-                        // </View>
-                        null
 
-                    )}
                     {/* Indicator container */}
                     <View
                         style={{
@@ -166,16 +100,14 @@ const OnBoarding = ({ navigation }) => {
                                     styles.indicator,
                                     currentSlideIndex == index && {
                                         backgroundColor: COLORS.white,
-                                        width: 10,
-                                        height: 10,
+                                        width: 9,
+                                        height: 9,
                                         borderRadius: 5,
                                     },
                                 ]}
                             />
                         ))}
                     </View>
-
-
                 </View>
             </View>
         );
@@ -205,13 +137,14 @@ const styles = StyleSheet.create({
         color: COLORS.white,
         fontSize: 13,
         marginTop: 10,
+        fontFamily: 'Metropolis-Medium',
         textAlign: 'center',
         lineHeight: 16,
     },
     title: {
         color: COLORS.white,
         fontSize: 18,
-        fontWeight: 'bold',
+        fontFamily: 'Metropolis-Bold',
         marginTop: 20,
         textAlign: 'center',
     },
@@ -221,8 +154,8 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     indicator: {
-        height: 10,
-        width: 10,
+        height: 9,
+        width: 9,
         backgroundColor: 'grey',
         marginHorizontal: 3,
         borderRadius: 5,

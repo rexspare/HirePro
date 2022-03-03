@@ -22,7 +22,7 @@ export default function Splash() {
                     <Splash_S />
                 </View>
             }
-            backgroundColor="#33bd94"
+            backgroundColor="#33BD94"
             logoHeight={100}
             logoWidth={100}
         >

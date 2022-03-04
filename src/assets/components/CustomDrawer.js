@@ -2,8 +2,10 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Menu from '../svg/Menu.svg'
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
+import { useNavigation } from '@react-navigation/native'
 
 export default function CustomDrawer(props) {
+    const navigation = useNavigation()
     return (
         <View style={{ flex: 1, }}>
 
@@ -16,7 +18,6 @@ export default function CustomDrawer(props) {
             </View>
 
             <DrawerContentScrollView {...props}>
-
                 <DrawerItemList {...props} />
 
 

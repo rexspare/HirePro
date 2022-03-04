@@ -27,7 +27,7 @@ export default class AppStack extends Component {
                     drawerActiveBackgroundColor: '#EFFFFA',
                     drawerActiveTintColor: "#949494",
                     drawerInactiveTintColor: "#949494",
-                    drawerLabelStyle: { fontSize: 16, marginLeft: -14 },
+                    drawerLabelStyle: { fontSize: 16, marginLeft: -14, },
                     drawerItemStyle: { paddingLeft: 5 }
                 }}>
                 <Drawer.Screen name='Home' component={HomeStack}

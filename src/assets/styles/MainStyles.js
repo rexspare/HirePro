@@ -65,6 +65,22 @@ const MainStyles = StyleSheet.create({
     item_svg_S: {
         position: 'absolute',
         right: 15
+    },
+
+    // Our STORY STYLES
+    small_Text: {
+        fontFamily: "Metropolis-Bold",
+        fontSize: 18,
+        color: '#33BD94'
+    },
+    large_Text: {
+        fontFamily: 'Metropolis-Black',
+        fontSize: 20,
+        color: '#33BD94'
+    },
+    Story_Container: {
+        width: width,
+        backgroundColor: "#FFFFFF"
     }
 })
 

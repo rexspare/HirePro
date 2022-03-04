@@ -4,6 +4,7 @@ import BigButton from '../../assets/components/reusable/BigButton';
 
 const COLORS = { primary: '#383838', white: '#fff' };
 const { width, height } = Dimensions.get('screen');
+
 export default function LastItem(props) {
     const img = props.slider.image
     return (

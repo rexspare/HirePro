@@ -6,7 +6,8 @@ import GDIcon from '../assets/svg/Service_svg/GDIcon.svg'
 import SQAIcon from '../assets/svg/Service_svg/SQAIcon.svg'
 import Pro_Manage from '../assets/svg/Service_svg/Pro_Manage.svg'
 import Marketing from '../assets/svg/Service_svg/Marketing.svg'
-
+//COMPONENTS
+import Web_Dev from '../assets/components/service_Components/Web_Dev'
 
 export const Data = [
     {
@@ -19,7 +20,9 @@ export const Data = [
         id: 2,
         name: "Mobile App Development",
         svg: <Mobile fill="#33BD94" />,
-        svg_S: <Mobile fill="#FFFFFF" />
+        svg_S: <Mobile fill="#FFFFFF" />,
+
+
 
     },
     {

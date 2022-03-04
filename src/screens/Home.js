@@ -7,7 +7,10 @@ import Home_Freelancer from '../assets/svg/Home/Home_Freelancer.svg'
 import Home_Full_Time from '../assets/svg/Home/Home_Full_Time.svg'
 import Home_Team from '../assets/svg/Home/Home_Team.svg'
 
+import { useNavigation } from '@react-navigation/native'
+
 export default function Home() {
+    const navigation = useNavigation();
     return (
         <View style={MainStyles.Home_Container}>
             <Header />
@@ -34,7 +37,8 @@ export default function Home() {
                     <Text style={MainStyles.det_text}>Freelancer</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={MainStyles.Main_btn} activeOpacity={0.7}>
+                <TouchableOpacity style={MainStyles.Main_btn} activeOpacity={0.7}
+                    onPress={() => navigation.navigate("Services")}>
                     <Home_Team />
                     <Text style={MainStyles.det_text}>Full-Time Employee</Text>
                 </TouchableOpacity>

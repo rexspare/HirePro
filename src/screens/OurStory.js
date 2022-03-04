@@ -2,12 +2,14 @@ import { View, Text, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import Header from '../assets/components/reusable/Header'
 import MainStyles from '../assets/styles/MainStyles'
-import StoryData from '../assets/data/StoryData'
+import { StoryData } from '../assets/data/StoryData'
 
 export default function OurStory() {
     const [data, setData] = useState(StoryData)
 
+
     return (
+
         <ScrollView style={MainStyles.Story_Container}>
             <Header />
 

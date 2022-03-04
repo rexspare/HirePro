@@ -133,40 +133,14 @@ const OnBoarding = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    subtitle: {
-        color: COLORS.white,
-        fontSize: 13,
-        marginTop: 10,
-        fontFamily: 'Metropolis-Medium',
-        textAlign: 'center',
-        lineHeight: 16,
-    },
-    title: {
-        color: COLORS.white,
-        fontSize: 18,
-        fontFamily: 'Metropolis-Bold',
-        marginTop: 20,
-        textAlign: 'center',
-    },
-    image: {
-        height: '100%',
-        width: '100%',
-        resizeMode: 'contain',
-    },
+
+
     indicator: {
         height: 9,
         width: 9,
         backgroundColor: 'grey',
         marginHorizontal: 3,
         borderRadius: 5,
-    },
-    btn: {
-        flex: 1,
-        height: 50,
-        borderRadius: 5,
-        backgroundColor: '#E75950',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     skip_Container: {
         position: 'absolute',

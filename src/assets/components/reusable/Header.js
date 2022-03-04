@@ -10,7 +10,7 @@ export default function Header() {
         <View style={ReusableStyles.header_Container}>
             <TouchableOpacity onPress={() => navigation.openDrawer()}
                 activeOpacity={0.7}>
-                <Menu />
+                <Menu stroke="#33BD94" />
             </TouchableOpacity>
         </View>
     )

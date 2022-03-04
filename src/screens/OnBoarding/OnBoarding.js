@@ -11,6 +11,9 @@ import {
     Dimensions,
 } from 'react-native';
 import OnBoarding_1 from '../../assets/svg/Onborading/OnBoarding_1.svg'
+import OnBoarding_2 from '../../assets/svg/Onborading/OnBoarding_2.svg'
+import OnBoarding_3 from '../../assets/svg/Onborading/OnBoarding_3.svg'
+import OnBoarding_4 from '../../assets/svg/Onborading/OnBoarding_4.svg'
 import ItemView from './ItemView';
 import LastItem from './LastItem';
 const { width, height } = Dimensions.get('screen');
@@ -20,21 +23,25 @@ const COLORS = { primary: '#383838', white: '#fff' };
 const slides = [
     {
         id: '1',
+        svg: <OnBoarding_1 />,
         title: 'Best Digital SolutioHire IT Professionals at very affordable prices.',
         subtitle: 'Make the most of HirePro’s 150+ Seasoned IT Professionals to Boost Your Online Presence. HirePro has experts who usher ease of mind for you..',
     },
     {
         id: '2',
+        svg: <OnBoarding_2 />,
         title: 'Quick, Easy, and Seamless!',
         subtitle: 'We showcase to you the best talent pool. You choose the best resources according to your needs & budget, that’s all about it. That’s all it takes to hire certified professionalswith HirePro.',
     },
     {
         id: '3',
+        svg: <OnBoarding_3 />,
         title: 'Why to choose HirePro ',
         subtitle: 'Years of industry exposure have helped HirePro set up a diverse service pool, covering all areas essential for any business to thrive in the virtual world. Our resource pool comprises the best professionals with solid track record. We select them through a lengthy & strict vetting process, So you get the best services for the best rates.',
     },
     {
         id: '4',
+        svg: <OnBoarding_4 />,
         title: 'Increase Your Value',
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
@@ -120,7 +127,7 @@ const OnBoarding = ({ navigation }) => {
                 // style={{ marginTop: 150 }}
                 ref={ref}
                 onMomentumScrollEnd={updateCurrentSlideIndex}
-                contentContainerStyle={{ height: height * 0.85 }}
+                contentContainerStyle={{ height: height * 0.9 }}
                 showsHorizontalScrollIndicator={false}
                 horizontal
                 data={slides}

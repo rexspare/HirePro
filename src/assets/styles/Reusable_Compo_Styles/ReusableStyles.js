@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+const { width, height } = Dimensions.get('screen')
 
 const ReusableStyles = StyleSheet.create({
     // BIG BUTTON STYLES
@@ -24,6 +25,15 @@ const ReusableStyles = StyleSheet.create({
         fontSize: 16,
         color: '#FFFFFF',
 
+    },
+
+    // HEADER STYLES
+    header_Container: {
+        backgroundColor: '#FFFFFF',
+        width: width,
+        height: height * 0.07,
+        justifyContent: 'center',
+        paddingLeft: 20
     }
 })
 

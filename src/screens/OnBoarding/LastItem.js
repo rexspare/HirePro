@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native'
 import React from 'react'
 import BigButton from '../../assets/components/reusable/BigButton';
-import OnBoarding_4 from '../../assets/svg/Onborading/OnBoarding_4.svg'
 
 const COLORS = { primary: '#383838', white: '#fff' };
 const { width, height } = Dimensions.get('screen');
@@ -18,7 +17,8 @@ export default function LastItem(props) {
                 here with HirePro.</Text>
 
             <View style={styles.Details_Container}>
-                <OnBoarding_4 />
+                {/* SVG */}
+                {props.slider?.svg}
                 <View style={{ width: '66%', paddingLeft: 15 }}>
 
                     <Text style={styles.heading}>You Share, We Care</Text>

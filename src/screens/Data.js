@@ -20,6 +20,7 @@ export const Data = [
         name: "Mobile App Development",
         svg: <Mobile fill="#33BD94" />,
         svg_S: <Mobile fill="#FFFFFF" />
+
     },
     {
         id: 3,

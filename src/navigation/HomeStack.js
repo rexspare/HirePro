@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/Home';
-import Services from '../screens/Services';
+import Services from '../screens/ServicesScreens/Services';
+import SelectedServices from '../screens/ServicesScreens/SelectedServices';
 import React, { Component } from 'react'
 
 export default function HomeStack() {
@@ -11,6 +12,7 @@ export default function HomeStack() {
         }}>
             {/* <Stack.Screen name='HomeScreen' component={Home} /> */}
             <Stack.Screen name='Services' component={Services} />
+            <Stack.Screen name='SelectedServives' component={SelectedServices} />
         </Stack.Navigator>
     )
 }

@@ -48,7 +48,8 @@ export default class App extends Component {
         return (
             <TouchableOpacity style={[MainStyles.itemContainer,
             { backgroundColor: item.selected ? "#33BD94" : '#EFFFFA' }]}
-                onPress={() => this.onPressHandler(item.id)} >
+                onPress={() => this.onPressHandler(item.id)}
+                activeOpacity={0.7} >
 
                 <View style={MainStyles.item_svg}>
                     {item.selected == true ? item.svg_S : item.svg}

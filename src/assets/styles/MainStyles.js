@@ -81,6 +81,53 @@ const MainStyles = StyleSheet.create({
     Story_Container: {
         width: width,
         backgroundColor: "#FFFFFF"
+    },
+
+    // Our CLIENTS STYLES
+    heading_Contaiber: {
+        width: '85%',
+        alignItems: 'center'
+    },
+    testemonial: {
+        fontFamily: "Metropolis-Medium",
+        fontSize: 17,
+        lineHeight: 20,
+        color: '#949494',
+        marginVertical: 10
+    },
+
+    // CONTACT US STYLES
+    Contact_Box: {
+        width: 310,
+        height: 240,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+        borderRadius: 8,
+        padding: 20,
+        marginVertical: 20,
+        shadowColor: "#33bd94",
+        shadowOffset: {
+            width: 10,
+            height: 10,
+        },
+        shadowOpacity: 0.9,
+        shadowRadius: 10,
+        elevation: 10,
+    },
+    contactText: {
+        fontFamily: 'Metropolis-Medium',
+        color: "#949494",
+        marginVertical: 3,
+        fontSize: 14,
+        textAlign: 'center',
+        lineHeight: 16
+
+    },
+    contactDet: {
+        fontFamily: 'Metropolis-Bold',
+        color: '#33BD94',
+        fontSize: 18
     }
 })
 

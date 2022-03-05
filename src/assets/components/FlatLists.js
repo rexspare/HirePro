@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native"
+import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native"
 import FlatListStyles from "../styles/FlatlistStyles";
 import Star from '../svg/Star.svg'
 
@@ -33,6 +33,15 @@ export const RenderClients = ({ item }) => {
 
             <Text style={FlatListStyles.clientmsg}>{item.msg}</Text>
         </View>
+    )
+}
+
+
+export const RenderSelected = ({ item }) => {
+    return (
+        <ScrollView>
+            <Text>{item.name}</Text>
+        </ScrollView>
     )
 }
 

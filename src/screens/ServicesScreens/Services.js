@@ -24,7 +24,7 @@ export default class App extends Component {
             if (data.id == id) {
                 data.selected = (data.selected == null) ? true : !data.selected;
                 if (data.selected) {
-                    selectedServices.push(data.name);
+                    selectedServices.push(data);
                 } else {
                     selectedServices = this.arrayRemove(this.state.selectedServices, data.name)
                 }
@@ -81,7 +81,8 @@ export default class App extends Component {
                 </View>
                 <View style={{ alignSelf: 'center', top: 30 }}>
                     <BigButton title="Proceed"
-                        onpress={() => this.props.navigation.navigate("SelectedServives")} />
+                        onpress={() => this.props.navigation.navigate("SelectedServives",
+                            { selected: this.state.selectedServices })} />
                 </View>
 
             </View>

@@ -34,6 +34,27 @@ const ReusableStyles = StyleSheet.create({
         height: height * 0.07,
         justifyContent: 'center',
         paddingLeft: 20
+    },
+
+    // INPUTFILEDS STYLES
+    Input_Container: {
+        width: '85%',
+        height: 50,
+        flexDirection: 'row',
+        backgroundColor: "#F2F2F2",
+        borderRadius: 7,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 25
+    },
+
+    inputField: {
+        width: '85%',
+        height: 50,
+        fontFamily: 'Metropolis-Medium',
+        fontSize: 14,
+        paddingLeft: 15
+
     }
 })
 

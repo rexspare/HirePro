@@ -128,6 +128,32 @@ const MainStyles = StyleSheet.create({
         fontFamily: 'Metropolis-Bold',
         color: '#33BD94',
         fontSize: 18
+    },
+
+    // TERMS STYLES
+    termText: {
+        fontFamily: 'Metropolis-Regular',
+        color: "#949494",
+        paddingVertical: 10,
+        fontSize: 16
+    },
+    Input_Container: {
+        width: '85%',
+        height: 150,
+        flexDirection: 'row',
+        backgroundColor: "#F2F2F2",
+        borderRadius: 7,
+        marginTop: 25,
+        marginBottom: 75
+    },
+
+    inputField: {
+        width: '85%',
+        height: 50,
+        fontFamily: 'Metropolis-Medium',
+        fontSize: 14,
+        paddingLeft: 15,
+
     }
 })
 

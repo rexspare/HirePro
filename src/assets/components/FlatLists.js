@@ -81,11 +81,7 @@ export function SelectSubServces(props) {
 
     // function which remove value from array and return  
     const arrayRemove = (arr, value) => {
-
-        return arr.filter(function (geeks) {
-            return geeks != value;
-
-        });
+        return arr.filter(ser => ser.name != value)
     }
 
     const RenderComponent = ({ item }) => {

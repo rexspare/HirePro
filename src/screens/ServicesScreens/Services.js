@@ -32,16 +32,12 @@ export default class App extends Component {
             }
         }
         this.setState({ renderData });
-        this.setState({ selectedServices });
+        this.setState({ selectedServices: selectedServices });
     }
 
     // function which remove value from array and return  
     arrayRemove(arr, value) {
-
-        return arr.filter(function (geeks) {
-            return geeks != value;
-
-        });
+        return arr.filter(ser => ser.name != value)
     }
 
     renderComponent = ({ item }) => {

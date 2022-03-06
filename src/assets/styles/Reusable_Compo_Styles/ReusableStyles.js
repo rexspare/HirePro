@@ -21,10 +21,50 @@ const ReusableStyles = StyleSheet.create({
 
     },
     Button_text: {
-        fontFamily: "Metropolis-Black",
+        fontFamily: "Metropolis-ExtraBold",
         fontSize: 16,
         color: '#FFFFFF',
 
+    },
+
+    // MEDIUM BUTTON STYLES
+    mb_Container: {
+        backgroundColor: "#33BD94",
+        borderRadius: 7,
+        width: 130,
+        height: 45,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 1,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+        elevation: 5,
+    },
+
+    // SMALL BUTTON STYES
+    sm_Container: {
+        borderRadius: 7,
+        width: 55,
+        height: 55,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 1,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+        elevation: 5,
+    },
+
+    small_num: {
+        fontFamily: "Metropolis-Bold",
+        fontSize: 18,
     },
 
     // HEADER STYLES

@@ -74,6 +74,12 @@ const FlatListStyles = StyleSheet.create({
         fontSize: 15,
         color: '#949494',
         marginVertical: 10
+    },
+
+    subServiceContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: 30,
     }
 })
 

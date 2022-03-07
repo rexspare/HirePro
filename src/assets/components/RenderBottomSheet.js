@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Feather from 'react-native-vector-icons/Feather';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
@@ -12,6 +12,16 @@ import BigButton from './reusable/BigButton';
 export default function RenderBottomSheet(props) {
     const state = useSelector((state) => state.handleCart)
     const navigation = useNavigation();
+    const [m_btn1, setM_btn1] = useState(true)
+    const [m_btn2, setM_btn2] = useState(false)
+
+    const m_btn1_Pressed = () => {
+        setM_btn1(true); setM_btn2(false)
+    }
+
+    const m_btn2_Pressed = () => {
+        setM_btn1(false); setM_btn2(true)
+    }
 
     return (
         <View style={CompoStyles.bs_container}>
@@ -28,7 +38,7 @@ export default function RenderBottomSheet(props) {
             <Text style={CompoStyles.bs_SmallHeading}>Experience:</Text>
 
             <View style={CompoStyles.smallButtonContainer}>
-                <SmallButton />
+                <SmallButton bgc='#33BD94' color='#fff' />
                 <SmallButton title='2' />
                 <SmallButton title='3' />
                 <SmallButton title='Other' />
@@ -36,8 +46,10 @@ export default function RenderBottomSheet(props) {
             <Text style={[CompoStyles.bs_SmallHeading, { right: 110 }]}>Payment:</Text>
 
             <View style={CompoStyles.smallButtonContainer}>
-                <MediumButton title='Per Hour' />
-                <MediumButton title='Per Month' />
+                <MediumButton title='Per Hour' onpress={m_btn1_Pressed}
+                    bgc={m_btn1 ? '#33BD94' : "#EFFFFA"} color={m_btn1 ? '#fff' : "#33BD94"} />
+                <MediumButton title='Per Month' onpress={m_btn2_Pressed}
+                    bgc={m_btn2 ? '#33BD94' : "#EFFFFA"} color={m_btn2 ? '#fff' : "#33BD94"} />
             </View>
 
             <View style={CompoStyles.priceCaption}>
@@ -46,7 +58,8 @@ export default function RenderBottomSheet(props) {
                 <Text style={{ fontFamily: 'Metropolis-Medium', fontSize: 15 }}> Export for</Text>
             </View>
 
-            <MediumButton title="8 $" isDisabled={true} />
+            <MediumButton title={m_btn1 ? state.perHour + "$" : state.perMonth + "$"} isDisabled={true} />
+
             <View style={{ marginTop: 15 }}>
                 <BigButton title="Done"
                     onpress={() => navigation.navigate('Qoute')} />

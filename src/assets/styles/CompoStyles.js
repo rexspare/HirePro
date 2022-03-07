@@ -61,17 +61,19 @@ const CompoStyles = StyleSheet.create({
         fontFamily: 'Metropolis-Bold',
         fontSize: 18,
         marginLeft: 13,
-        marginTop: 7, marginBottom: -7
+        marginTop: 7,
+        marginBottom: -7
     },
     // BOTTOM SHEET STYLES
     bs_container: {
         backgroundColor: 'white',
-        borderWidth: 2,
         borderTopRightRadius: 22,
         borderTopLeftRadius: 22,
         alignItems: 'center',
         height: 720,
-        paddingHorizontal: 25
+        paddingHorizontal: 25,
+        borderWidth: 1,
+        borderColor: '#949494'
     },
     bs_icon: {
         position: 'absolute',

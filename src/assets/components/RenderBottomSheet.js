@@ -4,7 +4,9 @@ import Feather from 'react-native-vector-icons/Feather';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
-import CompoStyles from '../styles/CompoStyles'
+import CompoStyles from '../styles/CompoStyles';
+import Option from './reusable/Option';
+import TestCompo from '../../../TestCompo';
 import SmallButton from './reusable/SmallButton';
 import MediumButton from './reusable/MediumButton';
 import BigButton from './reusable/BigButton';
@@ -14,6 +16,7 @@ export default function RenderBottomSheet(props) {
     const navigation = useNavigation();
     const [m_btn1, setM_btn1] = useState(true)
     const [m_btn2, setM_btn2] = useState(false)
+    //Small Buttons
 
     const m_btn1_Pressed = () => {
         setM_btn1(true); setM_btn2(false)
@@ -37,11 +40,13 @@ export default function RenderBottomSheet(props) {
 
             <Text style={CompoStyles.bs_SmallHeading}>Experience:</Text>
 
-            <View style={CompoStyles.smallButtonContainer}>
-                <SmallButton bgc='#33BD94' color='#fff' />
-                <SmallButton title='2' />
-                <SmallButton title='3' />
-                <SmallButton title='Other' />
+            <View style={{ width: '90%' }}>
+                <Option
+                    options={['1', '2', '3', 'other']}
+                    onChange={(option) => {
+                        console.log(option);
+                    }}
+                />
             </View>
             <Text style={[CompoStyles.bs_SmallHeading, { right: 110 }]}>Payment:</Text>
 

@@ -1,11 +1,11 @@
 import { View, Text, ScrollView, FlatList, Alert } from 'react-native'
 import React, { useState } from 'react'
 import Header from '../assets/components/reusable/Header'
+import Stories from '../assets/components/Stories'
+import BigButton from "../assets/components/reusable/BigButton"
 import MainStyles from '../assets/styles/MainStyles'
 import { StoryData } from '../assets/data/StoryData'
 import { RenderComponent } from '../assets/components/FlatLists'
-import Stories from '../assets/components/Stories'
-import BigButton from "../assets/components/reusable/BigButton"
 
 export default function OurStory() {
     const [data, setData] = useState(StoryData)

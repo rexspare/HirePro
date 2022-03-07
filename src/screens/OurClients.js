@@ -1,10 +1,11 @@
 import { View, Text, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import Header from '../assets/components/reusable/Header'
+import BigButton from '../assets/components/reusable/BigButton'
 import MainStyles from '../assets/styles/MainStyles'
+
 import { ClientsData } from '../assets/data/ClientsData'
 import { RenderClients } from '../assets/components/FlatLists'
-import BigButton from '../assets/components/reusable/BigButton'
 
 export default function OurClients() {
     const [data, setData] = useState(ClientsData)

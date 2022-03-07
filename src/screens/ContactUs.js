@@ -3,6 +3,7 @@ import React from 'react'
 import Header from '../assets/components/reusable/Header'
 import MainStyles from '../assets/styles/MainStyles'
 import BigButton from '../assets/components/reusable/BigButton'
+
 import Email from '../assets/svg/Contactsvg/Email.svg'
 import Phone from '../assets/svg/Contactsvg/Phone.svg'
 import Circle from '../assets/svg/Contactsvg/Circle.svg'

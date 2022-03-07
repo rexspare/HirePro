@@ -1,8 +1,8 @@
 import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import Header from '../assets/components/reusable/Header'
-import MainStyles from '../assets/styles/MainStyles'
 import BigButton from '../assets/components/reusable/BigButton'
+import MainStyles from '../assets/styles/MainStyles'
 import { useNavigation } from '@react-navigation/native'
 
 export default function Terms() {

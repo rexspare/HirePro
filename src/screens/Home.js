@@ -27,12 +27,14 @@ export default function Home() {
                     <Text style={MainStyles.det_text}>Suits You Best?</Text>
                 </View>
 
-                <TouchableOpacity style={MainStyles.Main_btn} activeOpacity={0.7}>
+                <TouchableOpacity style={MainStyles.Main_btn} activeOpacity={0.7}
+                    onPress={() => navigation.navigate("Services")}>
                     <Home_Full_Time />
                     <Text style={MainStyles.det_text}>Full-Time Employee</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={MainStyles.Main_btn} activeOpacity={0.7}>
+                <TouchableOpacity style={MainStyles.Main_btn} activeOpacity={0.7}
+                    onPress={() => navigation.navigate("Services")}>
                     <Home_Freelancer />
                     <Text style={MainStyles.det_text}>Freelancer</Text>
                 </TouchableOpacity>

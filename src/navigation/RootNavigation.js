@@ -11,14 +11,14 @@ export default function RootNavigation() {
     const Stack = createNativeStackNavigator();
 
     useEffect(() => {
-        AsyncStorage.getItem('alreadyLaunched').then(value => {
-            if (value == null) {
-                AsyncStorage.setItem('alreadyLaunched', 'true');
-                setIsFirstLunch(true);
-            } else {
-                setIsFirstLunch(false)
-            }
-        })
+        // AsyncStorage.getItem('alreadyLaunched').then(value => {
+        //     if (value == null) {
+        //         AsyncStorage.setItem('alreadyLaunched', 'true');
+        //         setIsFirstLunch(true);
+        //     } else {
+        //         setIsFirstLunch(false)
+        //     }
+        // })
     }, []);
 
     if (isFirstLaunched == null) {

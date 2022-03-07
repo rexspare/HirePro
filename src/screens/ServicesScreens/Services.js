@@ -12,9 +12,12 @@ export default class App extends Component {
         super()
         this.state = {
             renderData: Data,
-            selectedServices: []
+            selectedServices: [],
+            checker: []
         }
     }
+
+
     // function will call when Button clicked
     onPressHandler(id) {
         let renderData = [...this.state.renderData];
@@ -77,6 +80,7 @@ export default class App extends Component {
                 </View>
                 <View style={{ alignSelf: 'center', top: 30 }}>
                     <BigButton title="Proceed"
+                        isDisabled={this.state.selectedServices.length === 0 ? true : false}
                         onpress={() => this.props.navigation.navigate("SelectedServives",
                             { selected: this.state.selectedServices })} />
                 </View>

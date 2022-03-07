@@ -33,6 +33,7 @@ export default function SelectedServices({ route }) {
                     ListFooterComponent={
                         <View style={{ alignSelf: 'center', marginVertical: 50 }}>
                             <BigButton title="Proceed"
+                                isDisabled={Object.keys(state).length === 0 ? true : false}
                                 onpress={() => sheetRef.current.snapTo(0)} />
                         </View>
                     }

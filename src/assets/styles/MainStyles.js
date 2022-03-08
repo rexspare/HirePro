@@ -154,7 +154,31 @@ const MainStyles = StyleSheet.create({
         fontSize: 14,
         paddingLeft: 15,
 
-    }
+    },
+
+    // QOUTE US STYLES
+
+    phoneContainer: {
+        width: '85%',
+        height: 50,
+        backgroundColor: "#F2F2F2",
+        marginRight: 10
+    },
+    textInput: {
+        fontFamily: 'Metropolis-Medium',
+        fontSize: 30,
+        backgroundColor: "#F2F2F2",
+        paddingVertical: 0,
+    },
+    Input_Container: {
+        width: '85%',
+        height: 50,
+        flexDirection: 'row',
+        backgroundColor: "#F2F2F2",
+        borderRadius: 7,
+        alignItems: 'center',
+        marginTop: 25
+    },
 })
 
 export default MainStyles;

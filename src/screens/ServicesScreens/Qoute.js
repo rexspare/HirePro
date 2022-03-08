@@ -1,15 +1,19 @@
-import { View, Text, TextInput, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import { View, Text, TextInput, ScrollView, StyleSheet, Pressable } from 'react-native'
+import React, { useState, useRef } from 'react'
 import Header from '../../assets/components/reusable/Header'
 import MainStyles from '../../assets/styles/MainStyles'
 import BigButton from '../../assets/components/reusable/BigButton'
 import { useNavigation } from '@react-navigation/native'
 import InputField from '../../assets/components/reusable/InputField'
 import Done_Modal from '../../assets/components/Done_Modal'
+import PhoneInput from 'react-native-phone-number-input';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function Qoute() {
     const navigation = useNavigation();
     const [visibility, setVisibility] = useState(false)
+    const [phoneNumber, setphoneNumber] = useState('');
+    const phoneInput = useRef(null);
     return (
         <View style={MainStyles.Home_Container} >
             <Header />
@@ -21,7 +25,24 @@ export default function Qoute() {
 
                     <InputField placeholder="Last Name" icon="user" />
 
-                    <InputField placeholder="Phone" icon="phone" />
+                    {/* <InputField placeholder="Phone" icon="phone" /> */}
+                    <View style={MainStyles.Input_Container}>
+                        <PhoneInput
+                            ref={phoneInput}
+                            defaultValue={phoneNumber}
+                            defaultCode="IN"
+                            layout="first"
+                            withShadow
+                            autoFocus
+                            containerStyle={MainStyles.phoneContainer}
+                            textContainerStyle={MainStyles.textInput}
+
+                            onChangeFormattedText={text => {
+                                setphoneNumber(text);
+                            }}
+                        />
+                        <AntDesign name='phone' size={20} />
+                    </View>
 
                     <InputField placeholder="Email" icon="voicemail" />
 

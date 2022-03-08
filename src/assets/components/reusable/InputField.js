@@ -9,6 +9,7 @@ export default function InputField(props) {
             <TextInput
                 style={ReusableStyles.inputField}
                 placeholder={props.placeholder}
+                onChangeText={(text) => props.onChangeText(text)}
             />
             <Feather name={props.icon} size={20} />
         </View>

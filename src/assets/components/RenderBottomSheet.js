@@ -14,16 +14,18 @@ import BigButton from './reusable/BigButton';
 export default function RenderBottomSheet(props) {
     const state = useSelector((state) => state.handleCart)
     const navigation = useNavigation();
+    const [year, setYear] = useState('1')
+    const [payment, setPayment] = useState(state.perHour)
     const [m_btn1, setM_btn1] = useState(true)
     const [m_btn2, setM_btn2] = useState(false)
     //Small Buttons
 
     const m_btn1_Pressed = () => {
-        setM_btn1(true); setM_btn2(false)
+        setM_btn1(true); setM_btn2(false); setPayment(state.perHour)
     }
 
     const m_btn2_Pressed = () => {
-        setM_btn1(false); setM_btn2(true)
+        setM_btn1(false); setM_btn2(true); setPayment(state.perMonth)
     }
 
     return (
@@ -44,7 +46,7 @@ export default function RenderBottomSheet(props) {
                 <Option
                     options={['1', '2', '3', 'other']}
                     onChange={(option) => {
-                        console.log(option);
+                        setYear(option);
                     }}
                 />
             </View>
@@ -67,7 +69,10 @@ export default function RenderBottomSheet(props) {
 
             <View style={{ marginTop: 15 }}>
                 <BigButton title="Done"
-                    onpress={() => navigation.navigate('Qoute')} />
+                    onpress={() => navigation.navigate('Qoute', {
+                        year: year,
+                        payment: payment
+                    })} />
             </View>
         </View >
     )

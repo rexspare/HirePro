@@ -17,8 +17,8 @@ export default function Qoute() {
     return (
         <View style={MainStyles.Home_Container} >
             <Header />
-            <ScrollView>
-                <View style={{ alignItems: 'center', marginBottom: 120 }}>
+            <ScrollView contentContainerStyle={{ paddingBottom: 130 }}>
+                <View style={{ alignItems: 'center', }}>
                     <Text style={[MainStyles.large_Text, { marginVertical: 20 }]}>Let’s Quote Us!</Text>
 
                     <InputField placeholder="First Name" icon="user" />
@@ -26,7 +26,7 @@ export default function Qoute() {
                     <InputField placeholder="Last Name" icon="user" />
 
                     {/* <InputField placeholder="Phone" icon="phone" /> */}
-                    <View style={MainStyles.Input_Container}>
+                    <View style={MainStyles.Input_Container1}>
                         <PhoneInput
                             ref={phoneInput}
                             defaultValue={phoneNumber}

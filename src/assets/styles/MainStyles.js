@@ -135,7 +135,7 @@ const MainStyles = StyleSheet.create({
         fontFamily: 'Metropolis-Regular',
         color: "#949494",
         paddingVertical: 10,
-        fontSize: 16
+        fontSize: 16,
     },
     Input_Container: {
         width: '85%',
@@ -144,7 +144,7 @@ const MainStyles = StyleSheet.create({
         backgroundColor: "#F2F2F2",
         borderRadius: 7,
         marginTop: 25,
-        marginBottom: 75
+        marginBottom: 30
     },
 
     inputField: {
@@ -160,7 +160,7 @@ const MainStyles = StyleSheet.create({
 
     phoneContainer: {
         width: '85%',
-        height: 50,
+        height: 48,
         backgroundColor: "#F2F2F2",
         marginRight: 10
     },
@@ -170,7 +170,7 @@ const MainStyles = StyleSheet.create({
         backgroundColor: "#F2F2F2",
         paddingVertical: 0,
     },
-    Input_Container: {
+    Input_Container1: {
         width: '85%',
         height: 50,
         flexDirection: 'row',

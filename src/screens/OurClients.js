@@ -1,5 +1,6 @@
 import { View, Text, FlatList } from 'react-native'
 import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 import Header from '../assets/components/reusable/Header'
 import BigButton from '../assets/components/reusable/BigButton'
 import MainStyles from '../assets/styles/MainStyles'
@@ -8,6 +9,7 @@ import { ClientsData } from '../assets/data/ClientsData'
 import { RenderClients } from '../assets/components/FlatLists'
 
 export default function OurClients() {
+    const navigation = useNavigation();
     const [data, setData] = useState(ClientsData)
 
     return (
@@ -34,7 +36,8 @@ export default function OurClients() {
                         keyExtractor={item => item.id.toString()}
                         renderItem={({ item }) => <RenderClients item={item} />}
                         ListFooterComponent={<View style={{ marginVertical: 100 }}>
-                            <BigButton title='Give us a try!' />
+                            <BigButton title='Give us a try!'
+                                onpress={() => navigation.navigate("Qoute")} />
                         </View>}
                     />
                 </View>

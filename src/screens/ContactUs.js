@@ -1,5 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+
 import Header from '../assets/components/reusable/Header'
 import MainStyles from '../assets/styles/MainStyles'
 import BigButton from '../assets/components/reusable/BigButton'
@@ -9,6 +11,7 @@ import Phone from '../assets/svg/Contactsvg/Phone.svg'
 import Circle from '../assets/svg/Contactsvg/Circle.svg'
 
 export default function ContactUs() {
+    const navigation = useNavigation();
     return (
         <View style={MainStyles.Home_Container}>
             <Header />
@@ -35,7 +38,8 @@ export default function ContactUs() {
                     <Text style={MainStyles.contactText}> Our experts are standing by 24 hours from 9 AM to 9 PM EST.</Text>
                 </View>
 
-                <BigButton title="Lets Quote Us!" />
+                <BigButton title="Lets Quote Us!"
+                    onpress={() => navigation.navigate("Qoute")} />
             </View>
 
         </View>

@@ -1,5 +1,6 @@
 import { View, Text, ScrollView, FlatList, Alert } from 'react-native'
 import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 import Header from '../assets/components/reusable/Header'
 import Stories from '../assets/components/Stories'
 import BigButton from "../assets/components/reusable/BigButton"
@@ -8,9 +9,8 @@ import { StoryData } from '../assets/data/StoryData'
 import { RenderComponent } from '../assets/components/FlatLists'
 
 export default function OurStory() {
+    const navigation = useNavigation();
     const [data, setData] = useState(StoryData)
-
-
 
     return (
 
@@ -45,7 +45,7 @@ export default function OurStory() {
 
                     <View style={{ marginBottom: 120 }}>
                         <BigButton title="Give us a try!"
-                            onpress={() => Alert.alert("THANKS")} />
+                            onpress={() => navigation.navigate("Qoute")} />
                     </View>
 
                 </View>
